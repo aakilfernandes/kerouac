@@ -1,0 +1,34 @@
+body{
+	height:2000px;
+	background-image:url('http://subtlepatterns.com/patterns/light_noise_diagonal.png');
+	font-family:Georgia;
+	color:#333
+}
+
+.clear{clear:both;}
+
+#lightbox{
+	width:800px;
+	background-color:white;
+	position:fixed;
+	left:50%;
+	margin-left:-400px;
+	top:50%;
+	padding:10px;
+}
+
+#lightbox .imagebox{
+	float:left;
+	margin-right:10px;
+}
+
+#lightbox .imagebox img{
+	width:100%;
+}
+
+#lightbox .passage div{margin-top:10px;}
+#lightbox .passage .by{
+	float:right;
+	margin-right:20%;
+}
+#lightbox .passage .by span{display:block;}
