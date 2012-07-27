@@ -1,11 +1,12 @@
 var lightbox = $('#lightbox').monarch();
 
 lightbox.params = {
-	lightboxX:		800,
-	bodyY:			2000,
-	imageboxN:		6,
-	imageboxRatio:	.75,
-	margin:			10,
+	lightboxX:		800,	//Starting width of the lightbox
+	bodyY:			2000,	//Height of the body
+	imageboxN:		6,		//Number of imageboxes
+	imageboxRatio:	.75,	//The ratio of height to width (height/width)
+	margin:			10,		//The space between image boxes, doesn't effect outer margin
+	//img bank
 	imgSrc:			window.location.href.replace('index.html','')+'img/imagebox/',
 	imgs:			[
 						'a.gif',
@@ -49,7 +50,7 @@ lightbox
 		var x = Math.ceil(this.params.lightboxX/(1+2*(scrollTop/(this.params.bodyY-$(window).height()))))
 		
 		//Adjust imageboxes
-		var imageboxX=(x-7*(this.params.margin))/this.params.imageboxN;
+		var imageboxX=(x-(this.params.imageboxN+1)*(this.params.margin))/this.params.imageboxN;
 		var imageboxY=imageboxX*this.params.imageboxRatio;
 		var imageboxExtra=Math.ceil(Math.pow(imageboxX%1,-1));
 		$(this).find('.imagebox').each(function(){
@@ -71,5 +72,7 @@ lightbox
 $(window).scroll(function(){
 	lightbox.onScroll($(this).scrollTop(),$(this).height())
 })
+
+//Fire window.scroll, doesn't work when set to 0.
 $(window).scrollTop(1)
 
