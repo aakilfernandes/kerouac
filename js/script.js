@@ -28,7 +28,7 @@ var Imagebox = function(imgSrc,imgs){
 				y = Math.floor(y);
 				
 				if(monarch.n!=0 && monarch.n%extra==0){
-					x++;y++;
+					x++;
 				}
 				
 				monarch
